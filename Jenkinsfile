@@ -2,13 +2,12 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'   // Make sure Maven is configured in Jenkins
-        jdk 'Java'      // Make sure JDK is configured
+        maven 'Maven-3'   // MUST match Jenkins config
+        jdk 'Java'
     }
 
     stages {
-
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
                 git 'https://github.com/dharmishthakothari/AutomationTestProject.git'
             }
@@ -20,15 +19,9 @@ pipeline {
             }
         }
 
-        stage('Test Execution') {
+        stage('Test') {
             steps {
                 sh 'mvn test'
-            }
-        }
-
-        stage('Report') {
-            steps {
-                junit '**/target/surefire-reports/*.xml'
             }
         }
     }
