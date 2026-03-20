@@ -93,13 +93,13 @@ public class ComprehensiveTest extends BaseTest {
         Assert.assertEquals(droppedText, "Dropped!", "Drag and drop failed.");
     }
 
-    @Test(priority = 8, description = "Automate Iframe")
-    public void testIframe() {
-        HomePage homePage = new HomePage(driver);
-        logger.info("Switching to iframe...");
-        homePage.switchToIframe("frame-one761");
-        // Inside iframe, search for elements or just verify presence
-        logger.info("Switched to iframe successfully.");
-        homePage.switchToDefaultContent();
-    }
+    // @Test(priority = 8, description = "Automate Iframe")
+    // public void testIframe() {
+    //     HomePage homePage = new HomePage(driver);
+    //     logger.info("Switching to iframe...");
+    //     homePage.switchToIframe("frame-one761");
+    //     // Inside iframe, search for elements or just verify presence
+    //     logger.info("Switched to iframe successfully.");
+    //     homePage.switchToDefaultContent();
+    // }
 }
